@@ -4,7 +4,7 @@ using UnityEngine;
 using SocketIO;
 
 public class Network : MonoBehaviour {
-	static SocketIOComponent socket;
+ 	static SocketIOComponent socket;
 	public GameObject playerPrefab;
 
 	Dictionary<string, GameObject> players;
@@ -15,13 +15,14 @@ public class Network : MonoBehaviour {
 		socket.On ("open", OnConnected);
 		socket.On ("spawn player", OnSpawned);
 		socket.On ("disconnected", OnDisconnected);
+		socket.On ("move", OnMove);
 		players = new Dictionary<string, GameObject> ();
 	}
 	
 	// Tells us we are connected
 	void OnConnected (SocketIOEvent e) {
 		Debug.Log ("We are Connected");
-		socket.Emit ("playerhere");
+		//socket.Emit ("playerhere");
 	}
 
 	void OnSpawned(SocketIOEvent e){
@@ -39,5 +40,21 @@ public class Network : MonoBehaviour {
 		var player = players [id];
 		Destroy (player);
 		players.Remove (id);
+	}
+	void OnMove(SocketIOEvent e){
+		Debug.Log ("Networked player is moving " + e.data);
+
+		var id = e.data["id"].ToString();
+		var player = players [id];
+
+		var pos = new Vector3 (GetFloatFromJson(e.data,"x"), 0 ,GetFloatFromJson(e.data,"y"));
+		Debug.Log ("pos: " + pos);
+		var netMove = player.GetComponent<CharacterMovement> ();
+
+		netMove.NetworkMovement (pos);
+	}
+
+	float GetFloatFromJson(JSONObject data, string key){
+		return float.Parse(data [key].ToString().Replace("\"", ""));
 	}
 }

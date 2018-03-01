@@ -1,15 +1,21 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CharacterMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs">
     <Files>
-      <File FileName="Assets\Network.cs" Line="57" Column="3" />
+      <File FileName="Assets\Network.cs" Line="5" Column="1" />
       <File FileName="Assets\NetworkMovement.cs" Line="19" Column="40" />
-      <File FileName="Assets\Scripts\CharacterMovement.cs" Line="80" Column="36" />
+      <File FileName="Assets\Scripts\CharacterMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\GameData.cs" Line="12" Column="2" />
+      <File FileName="Assets\Playerdata.cs" Line="8" Column="2" />
+      <File FileName="Assets\GameDataEditor.cs" Line="7" Column="1" />
+      <File FileName="Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs" Line="40" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="C:\SocketIOLab\SocketIOProject\SocketIOProject\Assets\Network.cs" line="44" column="1" />
+      <Breakpoint file="C:\SocketIOLab\SocketIOProject\SocketIOProject\Assets\Playerdata.cs" line="4" column="1" />
+      <Breakpoint file="C:\SocketIOLab\SocketIOProject\SocketIOProject\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs" line="41" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
